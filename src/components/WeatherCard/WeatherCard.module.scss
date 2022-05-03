@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&family=VT323&display=swap");
+
+.card {
+  width: 100px;
+  height: 160px;
+  border: 4px solid black;
+  font-family: "VT323";
+  font-size: 24px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px rgb(0, 0, 0);
+}
+
+.temperaturecontainer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+}

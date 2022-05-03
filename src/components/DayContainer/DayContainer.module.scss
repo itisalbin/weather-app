@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&family=VT323&display=swap");
+
+.dayContainer {
+  width: 100%;
+  font-family: "VT323";
+  font-size: 24px;
+  height: 300px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.scrollcontainer {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-right: 20px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollcontainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.timecontainer {
+  display: block;
+}
