@@ -4,9 +4,10 @@ import styles from "./WeatherCard.module.scss";
 import WeatherImg from "../../components/WeatherImg/WeatherImg.js";
 import windImgs from "../../assets/windImages.js";
 import weatherImgs from "../../assets/weatherImages.js";
+import nightImgs from "../../assets/nightImages.js";
 
 const WeatherCard = (props) => {
-  const weatherImg = getWeatherImg(props.cloudCover, props.precipitation);
+  const weatherImg = getWeatherImg(props.cloudCover, props.precipitation, props.isNight);
   const windImg = getWindImg(props.windDirection, props.windSpeed);
   return (
     <div className={styles.card} style={props.isNight ? { backgroundColor: "black" } : { backgroundColor: "white" }}>
@@ -19,7 +20,7 @@ const WeatherCard = (props) => {
   );
 };
 
-function getWeatherImg(cloudCover, precipitation) {
+function getWeatherImg(cloudCover, precipitation, isNight) {
   if (precipitation > 0) {
     if (precipitation < 2.5) {
       return weatherImgs[1][0];
@@ -29,7 +30,11 @@ function getWeatherImg(cloudCover, precipitation) {
       return weatherImgs[1][1];
     }
   } else {
-    return weatherImgs[0][Math.round((3 / 8) * cloudCover)];
+    const imgIndex = Math.round((3 / 8) * cloudCover);
+    if (!isNight) {
+      return weatherImgs[0][imgIndex];
+    }
+    return nightImgs[imgIndex];
   }
 }
 
